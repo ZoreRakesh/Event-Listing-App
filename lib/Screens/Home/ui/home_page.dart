@@ -2,6 +2,7 @@ import 'package:app/Screens/Authentication/bloc/authentication_bloc.dart';
 import 'package:app/Screens/EventInfo/bloc/event_detail_bloc.dart';
 import 'package:app/Screens/EventInfo/ui/event_clicked_main_page.dart';
 import 'package:app/Screens/Home/bloc/home_bloc.dart';
+import 'package:app/Screens/Home/ui/loading_screen.dart';
 import 'package:app/Screens/Profile/ui/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app/utils/minuteparts.dart';
@@ -109,9 +110,7 @@ class _HomeState extends State<Home> {
                         builder: (context, state) {
                           switch (state.runtimeType) {
                             case HomeLoadingEventPageState:
-                              return Expanded(
-                                  child: Center(
-                                      child: CircularProgressIndicator()));
+                              return LoadingScreen();
                             case HomeLoadedSuccessEventPageState:
                               final successstate =
                                   state as HomeLoadedSuccessEventPageState;

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => AuthenticationBloc()..add(AppStartInitialEvent()),
-        child: Start(),
+        child: const Start(),
       )
       
     );

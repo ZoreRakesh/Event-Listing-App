@@ -23,10 +23,8 @@ class EventDetailBloc extends Bloc<EventDetailEvent, EventDetailState> {
     bool isPresent = registerEvents.any((item) => item == event.eventData.eventname);
 
     if (!isPresent) {
-      print(registerEvents);
       emit(NavigateToRegisterPageState());
-    }else{
-      print(registerEvents);
+    }else
       emit(EventAlreadyRegisterState());
     }
 
@@ -37,10 +35,9 @@ class EventDetailBloc extends Bloc<EventDetailEvent, EventDetailState> {
   FutureOr<void> formSubmitClickedEvent(FormSubmitClickedEvent event, Emitter<EventDetailState> emit) async{
     
     registerEvents.add(event.info[0]["eventName"]);
-    print(registerEvents);
-    print("sdzxsz");
+ 
 
   emit(EventRegisterSuccessState(info: event.info));
 
   }
-}
+
